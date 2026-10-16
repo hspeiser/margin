@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0F5EA"/>
+      <stop offset="1" stop-color="#D9E5CE"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-10%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0E2410" flood-opacity="0.30"/>
+    </filter>
+    <clipPath id="sq"><rect x="100" y="100" width="824" height="824" rx="186"/></clipPath>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#paper)" filter="url(#shadow)"/>
+  <g clip-path="url(#sq)">
+    <g stroke="#3F7038" stroke-opacity="0.2" stroke-width="5">
+      <line x1="100" y1="300" x2="924" y2="300"/>
+      <line x1="100" y1="400" x2="924" y2="400"/>
+      <line x1="100" y1="500" x2="924" y2="500"/>
+      <line x1="100" y1="600" x2="924" y2="600"/>
+      <line x1="100" y1="700" x2="924" y2="700"/>
+      <line x1="100" y1="800" x2="924" y2="800"/>
+    </g>
+    <line x1="636" y1="100" x2="636" y2="924" stroke="#2F6B3A" stroke-opacity="0.55" stroke-width="9"/>
+    <g stroke="#27322D" stroke-width="34" stroke-linecap="round">
+      <line x1="196" y1="262" x2="430" y2="262"/>
+      <line x1="196" y1="362" x2="352" y2="362"/>
+      <line x1="196" y1="462" x2="470" y2="462"/>
+      <line x1="196" y1="562" x2="390" y2="562"/>
+      <line x1="196" y1="662" x2="300" y2="662"/>
+    </g>
+    <g stroke="#1A4FA0" stroke-width="34" stroke-linecap="round">
+      <line x1="748" y1="262" x2="836" y2="262"/>
+      <line x1="712" y1="362" x2="836" y2="362"/>
+      <line x1="780" y1="462" x2="836" y2="462"/>
+      <line x1="730" y1="562" x2="836" y2="562"/>
+      <line x1="690" y1="616" x2="850" y2="616" stroke-width="10"/>
+      <line x1="690" y1="636" x2="850" y2="636" stroke-width="10"/>
+      <line x1="700" y1="712" x2="836" y2="712"/>
+    </g>
+  </g>
+</svg>

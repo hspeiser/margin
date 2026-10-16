@@ -1,0 +1,56 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Margin",
+  "version": "0.1.0",
+  "identifier": "app.margin.calculator",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Margin",
+        "width": 920,
+        "height": 680,
+        "minWidth": 420,
+        "minHeight": 320,
+        "resizable": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "center": true,
+        "trafficLightPosition": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost https://open.er-api.com https://api.coingecko.com"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "app",
+      "dmg"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "Productivity",
+    "shortDescription": "A notepad calculator that understands units",
+    "copyright": "\u00a9 2026 Henry Speiser",
+    "macOS": {
+      "minimumSystemVersion": "11.0",
+      "signingIdentity": "-"
+    }
+  }
+}

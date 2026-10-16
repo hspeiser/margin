@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Margin</title>
+  </head>
+  <body>
+    <div class="app" id="app">
+      <aside class="sidebar" id="sidebar" aria-label="Sheets">
+        <div class="sidebar-head" data-tauri-drag-region>
+          <button class="text-btn" id="new-sheet" title="New sheet (⌘N)">New sheet</button>
+        </div>
+        <ul class="sheet-list" id="sheet-list"></ul>
+      </aside>
+
+      <main class="main">
+        <header class="titlebar" data-tauri-drag-region>
+          <button class="icon-btn" id="toggle-sidebar" title="Show sheets (⌘\)" aria-label="Show sheets" aria-controls="sidebar" aria-expanded="false">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="15" height="13" rx="2.5" /><path d="M7.5 3.5v13" /></svg>
+          </button>
+          <div class="sheet-title" id="sheet-title" data-tauri-drag-region></div>
+          <button class="icon-btn" id="toggle-settings" title="Settings (⌘,)" aria-label="Settings" aria-controls="settings" aria-expanded="false">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h9M15 6h2M3 14h2M8 14h9" /><circle cx="13.5" cy="6" r="1.75" /><circle cx="6.5" cy="14" r="1.75" /></svg>
+          </button>
+        </header>
+
+        <div class="pad" id="pad"></div>
+      </main>
+
+      <section class="settings" id="settings" hidden aria-label="Settings">
+        <div class="setting">
+          <span class="setting-name" id="lbl-decimals">Decimal places</span>
+          <div class="stepper" role="group" aria-labelledby="lbl-decimals">
+            <button data-step="-1" aria-label="Fewer decimal places">−</button>
+            <output id="decimals-out">4</output>
+            <button data-step="1" aria-label="More decimal places">+</button>
+          </div>
+        </div>
+        <label class="setting">
+          <span class="setting-name">Thousands separators</span>
+          <input type="checkbox" id="opt-separators" class="switch" />
+        </label>
+        <label class="setting">
+          <span class="setting-name">24-hour clock</span>
+          <input type="checkbox" id="opt-24h" class="switch" />
+        </label>
+        <div class="setting">
+          <span class="setting-name" id="lbl-angle">Trig uses</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="lbl-angle" data-setting="angle">
+            <button role="radio" data-value="rad">Radians</button>
+            <button role="radio" data-value="deg">Degrees</button>
+          </div>
+        </div>
+        <div class="setting">
+          <span class="setting-name" id="lbl-theme">Appearance</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="lbl-theme" data-setting="theme">
+            <button role="radio" data-value="system">Auto</button>
+            <button role="radio" data-value="light">Pad</button>
+            <button role="radio" data-value="dark">Blueprint</button>
+          </div>
+        </div>
+        <div class="setting">
+          <span class="setting-name" id="lbl-size">Text size</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="lbl-size" data-setting="fontSize">
+            <button role="radio" data-value="14">S</button>
+            <button role="radio" data-value="16">M</button>
+            <button role="radio" data-value="19">L</button>
+          </div>
+        </div>
+        <div class="setting rates">
+          <span class="setting-name">Exchange rates</span>
+          <span class="rates-status" id="rates-status">Offline rates</span>
+          <button class="text-btn" id="refresh-rates">Refresh</button>
+        </div>
+      </section>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+    <script type="module" src="/src/ui/main.ts"></script>
+  </body>
+</html>
